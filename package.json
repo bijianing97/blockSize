@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "table": "^6.8.1",
     "web3": "^4.1.2"
   }
 }
