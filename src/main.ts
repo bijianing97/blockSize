@@ -69,12 +69,16 @@ const web3 = new Web3(httpProvider);
       backwardSize.toString(),
       (backwardSize / 1024 / 1024).toString(),
       (backwardSize / interval).toString(),
+      "",
+      "",
     ]);
     tableData.push([
       `After hardfork ${interval} blocks`,
       forwardSize.toString(),
       (forwardSize / 1024 / 1024).toString(),
       (forwardSize / interval).toString(),
+      "",
+      "",
     ]);
     tableData.push([
       "Retrench",
