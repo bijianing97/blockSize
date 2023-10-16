@@ -7,7 +7,14 @@ const web3 = new Web3(httpProvider);
   const hardforkNumber = 15774234;
   const intervalArray = [100, 1000, 10000, 20000, 30000, 50000, 80000, 100000];
   const tableData = [
-    ["BlockNumber", "totalSize/bytes", "totalSize/MB", "averageSize/bytes"],
+    [
+      "BlockNumber",
+      "totalSize/bytes",
+      "totalSize/MB",
+      "averageSize/bytes",
+      "retrenchSize/MB",
+      "retrenchRatio/%",
+    ],
   ];
   async function subsection(
     interval: number,
@@ -68,6 +75,14 @@ const web3 = new Web3(httpProvider);
       forwardSize.toString(),
       (forwardSize / 1024 / 1024).toString(),
       (forwardSize / interval).toString(),
+    ]);
+    tableData.push([
+      "Retrench",
+      "",
+      "",
+      "",
+      ((backwardSize - forwardSize) / 1024 / 1024).toString(),
+      (((backwardSize - forwardSize) / backwardSize) * 100).toString() + "%",
     ]);
     console.log(table(tableData));
   }
